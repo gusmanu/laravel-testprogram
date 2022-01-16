@@ -48,7 +48,7 @@ class ProductController extends Controller
     {
         $id = request()->route('id');
         if (!is_numeric($id)) {
-            return redirect()->route('admin.products')->withErrors('ID Produk Invalid');
+            return redirect()->route('index')->withErrors('ID Produk Invalid');
         }
         $product = Product::where('id_produk', $id)->first();
         if (!$product) {
